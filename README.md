@@ -54,7 +54,7 @@ API de e-commerce para productos, carrito, pedidos y panel de administración.
 - `APP_URL` (ejemplo: `http://localhost:8000`)
 - `DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`
 - `JWT_SECRET` (se genera con `php artisan jwt:secret`)
-- `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` (si usas login Google)
+- `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` 
 
 ## Ejecución en desarrollo
 
