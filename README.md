@@ -111,3 +111,35 @@ Se crea un admin por seeder:
 ```bash
 php artisan test
 ```
+
+## Documentación Swagger (OpenAPI)
+
+La API está documentada con **L5-Swagger**.
+
+### Rutas de documentación
+
+- UI Swagger: `GET /api/documentation`
+- JSON OpenAPI: `GET /docs`
+
+### Regenerar documentación
+
+Ejecutar este comando cuando se cambien endpoints:
+
+php artisan l5-swagger:generate
+
+Archivo generado:
+
+- `storage/api-docs/api-docs.json`
+
+### Autenticación en Swagger
+
+Los endpoints protegidos usan JWT Bearer:
+
+- Header: `Authorization: Bearer <token>`
+- Esquema de seguridad en Swagger: `bearerAuth`
+
+### Pruebas del Panel de Control (AdminPanelTest.php)
+- **8 pruebas**
+- Cubrimiento: autenticación admin, autorización por rol y endpoints críticos de administración
+- Incluye: login admin, denegación a no-admin, rutas protegidas, CRUD admin de productos y actualización de estado de órdenes
+

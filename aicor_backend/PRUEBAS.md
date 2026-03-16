@@ -45,10 +45,13 @@ Estos son tests de integración que prueban los endpoints de la API completos:
 
 ### Unit Tests (tests/Unit/)
 
-1. **ModeloTest.php**
-   - Pruebas de modelos
-   - Validación de tipos de datos
-   - Estructura de datos
+1. **ProductoModeloTest.php**
+   - Pruebas del modelo Product
+   - Validación de tipos de datos de producto
+
+2. **OrdenModeloTest.php**
+   - Pruebas del modelo Order
+   - Validación de tipos de datos y relación con usuario
 
 ## Comandos de Ejecución
 
@@ -78,10 +81,36 @@ php artisan test
 - Cubrimiento: Obtener productos, validación de estructura
 - Incluye: Lista vacía, campos requeridos, formato de datos
 
-### Pruebas de Modelos (ModeloTest.php)
+### Pruebas de Modelos
 - **7 pruebas**
 - Cubrimiento: Creación de modelos, validación de tipos
 - Incluye: Producto, Orden, relaciones básicas
+
+## Documentación Swagger (OpenAPI)
+
+La API está documentada con **L5-Swagger**.
+
+### Rutas de documentación
+
+- UI Swagger: `GET /api/documentation`
+- JSON OpenAPI: `GET /docs`
+
+### Regenerar documentación
+
+Ejecuta este comando cuando cambies endpoints:
+
+php artisan l5-swagger:generate
+
+Archivo generado:
+
+- `storage/api-docs/api-docs.json`
+
+### Autenticación en Swagger
+
+Los endpoints protegidos usan JWT Bearer:
+
+- Header: `Authorization: Bearer <token>`
+- Esquema de seguridad en Swagger: `bearerAuth`
 
 ### Pruebas del Panel de Control (AdminPanelTest.php)
 - **8 pruebas**

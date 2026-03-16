@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- fondo -->
+  <rect width="64" height="64" rx="14" fill="#1D4ED8"/>
+
+  <!-- asa de bolsa -->
+  <path d="M22 26c0-6 4-10 10-10s10 4 10 10"
+        fill="none"
+        stroke="white"
+        stroke-width="4"
+        stroke-linecap="round"/>
+
+  <!-- A -->
+  <path d="M32 20 L46 48 H40 L37 40 H27 L24 48 H18 Z"
+        fill="white"/>
+
+  <!-- barra de la A -->
+  <rect x="27" y="34" width="10" height="4" fill="#1D4ED8"/>
+</svg>
