@@ -56,6 +56,9 @@ API de e-commerce para productos, carrito, pedidos y panel de administración.
 - `JWT_SECRET` (se genera con `php artisan jwt:secret`)
 - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URI` 
 
+> Nota: en cada equipo nuevo debes configurar de nuevo las variables de Google en el `.env` local.
+> La URI de callback debe coincidir con la autorizada en Google Cloud Console (por ejemplo: `http://localhost:8000/api/auth/google/callback`).
+
 ## Ejecución en desarrollo
 
 Servidor API:
