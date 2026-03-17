@@ -1,8 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Article({ id, name, price, description,stock, image_url, addCart }) {
   const [controlStock, setControlStock] = useState(stock);
+  const navigate = useNavigate();
 
     const handleAddCart = () => {
         if (controlStock > 0) {
@@ -11,8 +13,15 @@ export function Article({ id, name, price, description,stock, image_url, addCart
          addCart({ id, name, price, image_url });
     };
 
+    const handleGoToProduct = () => {
+      navigate(`/product/${id}`);
+    };
+
   return (
-    <article className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full">
+    <article
+      className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full cursor-pointer"
+      onClick={handleGoToProduct}
+    >
       <div className="w-full h-40 sm:h-48 bg-gray-50 flex items-center justify-center">
         <img
           src={image_url}
@@ -33,7 +42,10 @@ export function Article({ id, name, price, description,stock, image_url, addCart
         )}
         <button
           className="mt-auto w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 rounded-md transition-colors cursor-pointer"
-          onClick={handleAddCart}
+          onClick={(event) => {
+            event.stopPropagation();
+            handleAddCart();
+          }}
         >
           Agregar al carrito
         </button>

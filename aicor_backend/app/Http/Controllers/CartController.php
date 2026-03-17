@@ -152,6 +152,16 @@ class CartController extends Controller
             return response()->json(['error' => 'Producto no está en el carrito'], 404);
         }
 
+        if ($cartItem->quantity > 1) {
+            $cartItem->quantity -= 1;
+            $cartItem->save();
+
+            return response()->json([
+                'message' => 'Se ha reducido una unidad del producto',
+                'quantity' => $cartItem->quantity,
+            ]);
+        }
+
         $cartItem->delete();
 
         return response()->json(['message' => 'Producto removido del carrito']);
