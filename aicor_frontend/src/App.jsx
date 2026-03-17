@@ -13,6 +13,7 @@ import MyOrders from "./pages/MyOrders";
 import { Footer } from "./components/Footer/Footer";
 import AdminRoutes from "./components/AdminRoutes/AdminRoutes";
 import AdminLogin from "./pages/admin/AdminLogin";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -63,6 +64,7 @@ function App() {
               )}
             />
             <Route path="/checkout" element={<CheckOut carrito={carrito} setCarrito={setCarrito} cartLoading={cartLoading} />} />
+            <Route path="/product/:id" element={<ProductDetails setCarrito={setCarrito} />} />
             <Route path="/order-details/:id" element={<OrderDetails setCarrito={setCarrito} />} />
             <Route path="/orders" element={<MyOrders />} />
             <Route path="/admin/login" element={<AdminLogin />} />
